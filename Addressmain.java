@@ -9,20 +9,20 @@ public class Addressmain {
 
 		Scanner sc = new Scanner(System.in);
 		ArrayList<Address> addressList = new ArrayList<Address>();
-
+ 
 		while (true) {
-			System.out.println("[1]Ãß°¡ [2]ÀüÃ¼Á¶È¸ [3]»èÁ¦ [4]°Ë»ö [5]Á¾·á >>");
+			System.out.println("[1]ì¶”ê°€ [2]ì „ì²´ì¡°íšŒ [3]ì‚­ì œ [4]ê²€ìƒ‰ [5]ì¢…ë£Œ >>");
 			int num = sc.nextInt();
 
 			if (num == 1) {
-				// ÀüÈ­¹øÈ£ºÎ(addressList)¿¡ °ªÀ» Ãß°¡½ÃÅ°°í ½ÍÀ½
-				// ÀÌ¸§, ³ªÀÌ, ÀüÈ­¹øÈ£¸¦ ÀÔ·Â¹Ş¾Æ¼­ -> °´Ã¼·Î ¸¸µé¾î¼­
-				// addressList Ãß°¡ ½ÃÅ°¸éµÊ
-				System.out.print("ÀÌ¸§ : ");
+				// ì „í™”ë²ˆí˜¸ë¶€(addressList)ì— ê°’ì„ ì¶”ê°€ì‹œí‚¤ê³  ì‹¶ìŒ
+				// ì´ë¦„, ë‚˜ì´, ì „í™”ë²ˆí˜¸ë¥¼ ì…ë ¥ë°›ì•„ì„œ -> ê°ì²´ë¡œ ë§Œë“¤ì–´ì„œ
+				// addressList ì¶”ê°€ ì‹œí‚¤ë©´ë¨
+				System.out.print("ì´ë¦„ : ");
 				String name = sc.next();
-				System.out.print("³ªÀÌ : ");
+				System.out.print("ë‚˜ì´ : ");
 				int age = sc.nextInt();
-				System.out.print("ÀüÈ­¹øÈ£ :");
+				System.out.print("ì „í™”ë²ˆí˜¸ :");
 				String phoneNum = sc.next();
 				Address list = new Address(name, age, phoneNum);
 				addressList.add(list);
@@ -32,21 +32,21 @@ public class Addressmain {
 					addressList.get(i).show();
 				}
 				if (addressList.size() == 0) {
-					System.out.println("¿¬¶ôÃ³°¡ ¾ø½À´Ï´Ù.");
+					System.out.println("ì—°ë½ì²˜ê°€ ì—†ìŠµë‹ˆë‹¤.");
 				}
 			} else if (num == 3) {
 				for (int i = 0; i < addressList.size(); i++) {
 					System.out.print((i + 1) + ". ");
 					addressList.get(i).show();
 				}
-				System.out.print("»èÁ¦ÇÒ ¹øÈ£¸¦ ÀÔ·ÂÇÏ¼¼¿ä>> ");
+				System.out.print("ì‚­ì œí•  ë²ˆí˜¸ë¥¼ ì…ë ¥í•˜ì„¸ìš”>> ");
 				int input = sc.nextInt();
 				addressList.remove(input - 1);
 				for (int i = 0; i < addressList.size(); i++) {
 					addressList.get(i).show();
 				}
 			} else if (num == 4) {
-				System.out.print("°Ë»öÇÒ ÀÌ¸§À» ÀÔ·ÂÇÏ¼¼¿ä>> ");
+				System.out.print("ê²€ìƒ‰í•  ì´ë¦„ì„ ì…ë ¥í•˜ì„¸ìš”>> ");
 				String nameSearch = sc.next();
 				for (int i = 0; i < addressList.size(); i++) {
 					if (addressList.get(i).getName().equals(nameSearch)){
@@ -54,7 +54,7 @@ public class Addressmain {
 					}
 				}
 			} else if (num == 5) {
-				System.out.println("ÇÁ·Î±×·¥ Á¾·á");
+				System.out.println("í”„ë¡œê·¸ë¨ ì¢…ë£Œ");
 				break;
 			}
 
